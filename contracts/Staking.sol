@@ -1192,7 +1192,7 @@ contract DelfyStakingPool is IDelfyStaking, Ownable, ReentrancyGuard {
     }
     
     function withdrawStrayToken(address token, address to, uint256 amount) external onlyOwner{
-        require(address(getPool[token].lpToken)== address(0), "only stray tokens");
-        IERC20(token).safeTransfer(to, amount);
+      require(address(getPool[token].lpToken)==address(0), "only stray tokens");
+      IERC20(token).safeTransfer(to, amount);
     }
 }
